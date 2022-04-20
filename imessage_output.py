@@ -35,6 +35,9 @@ def extract_messages_from_text(text_lines):
                 text = text.replace('.jpg','.jpg" width=280>')
                 text = text.replace('PTT-','<audio controls src="PTT-')
                 text = text.replace('.opus','.opus">')
+                text = text.replace('VID-','<video controls src="VID-')
+                text = text.replace('.mp4','.mp4" width=280 type="video/mp4">')
+                text = text.replace('.ogg','.ogg" width=280 type="video/ogg">')
                 messages.append(wamsg.WAMSG(date_group, time_group, sender, text))
                 message_suffix = ""
             except:
